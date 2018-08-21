@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Book implements Serializable {                        // Changed the class name from book to Book author @suresh and review @gourav 
 	
 	private String booktitle;				   // changed the Variable T to booktitle author @suresh and review @gourav
-	private String A;
+	private String bookauthor;				   // changed the variable A to bookauthor author @suresh and review @gourav
 	private String C;
 	private int ID;
 	
