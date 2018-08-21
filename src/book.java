@@ -2,9 +2,9 @@ import java.io.Serializable;
 //testing comment
 
 @SuppressWarnings("serial")
-public class book implements Serializable {
+public class Book implements Serializable {                        // Changed the class name from book to Book author @suresh and review @gourav 
 	
-	private String T;
+	private String booktitle;				   // changed the Variable T to booktitle author @suresh and review @gourav
 	private String A;
 	private String C;
 	private int ID;
