@@ -14,10 +14,10 @@ public class Book implements Serializable {                        // Changed th
 	
 	
 	public book(String author, String title, String callNo, int id) {
-		this.A = author;
-		this.T = title;
-		this.C = callNo;
-		this.ID = id;
+		this.bookauthor = author;					//Replaced this.A with this.bookauthor author @suresh and review by @gourav
+		this.booktitle = title;						//Replaced this.T with this.booktitle author @suresh and review by @gourav
+		this.bookcallno = callNo;					//Replaced this.C with this.bookcallno author @suresh and review by @gourav
+		this.bookID = id;						//Replaced this.ID with this.bookID author @suresh and review by @gourav
 		this.state = STATE.AVAILABLE;
 	}
 	
