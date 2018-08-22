@@ -23,11 +23,11 @@ public class Book implements Serializable {                        // Changed th
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Book: ").append(ID).append("\n")
-		  .append("  Title:  ").append(T).append("\n")
-		  .append("  Author: ").append(A).append("\n")
-		  .append("  CallNo: ").append(C).append("\n")
-		  .append("  State:  ").append(state);
+		sb.append("Book: ").append(bookID).append("\n")			//Changed append(ID) to append(bookID)
+		sb.append("  Title:  ").append(booktitle).append("\n")		// changed ".append("  Title:  ").append(T).append("\n") "   to    "sb.append("  Title:  ").append(booktitle).append("\n")"
+		 sb.append("  Author: ").append(bookAuthor).append("\n")	// changed ".append("  Author:  ").append(bookauthor).append("\n")" to  "sb..append("  Author:  ").append(booktitle).append("\n")"		
+		 sb.append("  CallNo: ").append(C).append("\n")			// changed ".append("  CallNo:  ").append(bookcallno).append("\n")" to "sb..append("  Callno:  ").append(bookcallno).append("\n")"
+		 sb.append("  State:  ").append(state).append("\n");		// changed ".append("  State:  ").append(state);" to "sb.append("  State:  ").append(state).append("\n");"
 		
 		return sb.toString();
 	}
