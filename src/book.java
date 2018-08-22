@@ -33,27 +33,27 @@ public class Book implements Serializable {                        // Changed th
 	}
 
 	public Integer ID() {
-		return ID;
+		return bookID;  						// changed ID to bookID.
 	}
 
 	public String Title() {
-		return T;
+		return booktitle;						// Changed T to booktitle.
 	}
 
 
 	
 	public boolean Available() {
-		return state == STATE.AVAILABLE;
+		return state = STATE.AVAILABLE;					// Changed "state == STATE.AVAILABLE" to "state = STATE.AVAILABLE".
 	}
 
 	
 	public boolean On_loan() {
-		return state == STATE.ON_LOAN;
+		return state = STATE.ON_LOAN;					// changed "state == STATE.ON_LOAN" to "state = STATE.ON_LOAN".
 	}
 
 	
 	public boolean Damaged() {
-		return state == STATE.DAMAGED;
+		return state = STATE.DAMAGED;					// changed "state == STATE.DAMAGED" to "state = STATE.DAMAGED".
 	}
 
 	
