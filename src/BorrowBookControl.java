@@ -5,36 +5,39 @@ public class BorrowBookControl {
 	
 	private BorrowBookUI ui;
 	
-	private library L;
-	private member M;
+	private library lib;							// Changed Variable Name L to lib author @suresh Review by @ gourav 
+	private member mem;							// Changed Variable Name M to mem author @suresh Review by @ gourav 
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
 	
 	private List<book> PENDING;
 	private List<loan> COMPLETED;
-	private book B;
+	private book bk;							// Changed Variable Name B to bk
 	
 	
-	public BorrowBookControl() {
-		this.L = L.INSTANCE();
+	public borrowbookcontrol() {						// Changed Method name BorrowBookControl to borrowbookcontrol
+		this.lib = lib.INSTANCE();					// Changed this.L = L.INSTANCE() to this.lib = lib.INSTANCE()
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
 
 	public void setUI(BorrowBookUI ui) {
-		if (!state.equals(CONTROL_STATE.INITIALISED)) 
+		if (!state.equals(CONTROL_STATE.INITIALISED))
+			{							//Braces included
 			throw new RuntimeException("BorrowBookControl: cannot call setUI except in INITIALISED state");
-			
+			}
 		this.ui = ui;
 		ui.setState(BorrowBookUI.UI_STATE.READY);
 		state = CONTROL_STATE.READY;		
 	}
 
 		
-	public void Swiped(int memberId) {
-		if (!state.equals(CONTROL_STATE.READY)) 
+	public void swiped(int memberId) {					//Changed  Method name Swiped to swiped
+		if (!state.equals(CONTROL_STATE.READY))
+			{ 							//Braces included
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
-			
+			}
+
 		M = L.getMember(memberId);
 		if (M == null) {
 			ui.display("Invalid memberId");
