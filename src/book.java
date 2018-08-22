@@ -13,7 +13,7 @@ public class Book implements Serializable {                        // Changed th
 	private STATE state;
 	
 	
-	public book(String author, String title, String callNo, int id) {
+	public book(string author, string title, string callNo, int id) { 	// changed book(String author, String title, String callNo, int id) to book(string author, string title, string callNo, int id)
 		this.bookauthor = author;					//Replaced this.A with this.bookauthor author @suresh and review by @gourav
 		this.booktitle = title;						//Replaced this.T with this.booktitle author @suresh and review by @gourav
 		this.bookcallno = callNo;					//Replaced this.C with this.bookcallno author @suresh and review by @gourav
@@ -21,7 +21,7 @@ public class Book implements Serializable {                        // Changed th
 		this.state = STATE.AVAILABLE;
 	}
 	
-	public String toString() {
+	public string toString() {						// Changed method datatype String toString() to string toString()
 		StringBuilder sb = new StringBuilder();
 		sb.append("Book: ").append(bookID).append("\n")			//Changed append(ID) to append(bookID)
 		sb.append("  Title:  ").append(booktitle).append("\n")		// changed ".append("  Title:  ").append(T).append("\n") "   to    "sb.append("  Title:  ").append(booktitle).append("\n")"
@@ -32,32 +32,32 @@ public class Book implements Serializable {                        // Changed th
 		return sb.toString();
 	}
 
-	public Integer ID() {
+	public integer id() {							//Changed Method name Inter ID() to integer id()
 		return bookID;  						// changed ID to bookID.
 	}
 
-	public String Title() {
+	public string title() {							// Changed Method name String Title() to string title() 
 		return booktitle;						// Changed T to booktitle.
 	}
 
 
 	
-	public boolean Available() {
+	public boolean available() {						// Changed Method name Available() to available()
 		return state = STATE.AVAILABLE;					// Changed "state == STATE.AVAILABLE" to "state = STATE.AVAILABLE".
 	}
 
 	
-	public boolean On_loan() {
+	public boolean on_loan() {						// Changed Method name On_loan() to on_loan()
 		return state = STATE.ON_LOAN;					// changed "state == STATE.ON_LOAN" to "state = STATE.ON_LOAN".
 	}
 
 	
-	public boolean Damaged() {
+	public boolean damaged() {						//changed Method name Damaged() to damaged()
 		return state = STATE.DAMAGED;					// changed "state == STATE.DAMAGED" to "state = STATE.DAMAGED".
 	}
 
 	
-	public void Borrow() {
+	public void borrow() {							// changed method name Borrow() to borrow()
 		if (state.equals(STATE.AVAILABLE)) {
 			state = STATE.ON_LOAN;
 		}
@@ -68,7 +68,7 @@ public class Book implements Serializable {                        // Changed th
 	}
 
 
-	public void Return(boolean DAMAGED) {
+	public void return(boolean DAMAGED) {					// changed method name Return(boolean DAMAGED) to return(boolean DAMAGED)
 		if (state.equals(STATE.ON_LOAN)) {
 			if (DAMAGED) {
 				state = STATE.DAMAGED;
@@ -83,7 +83,7 @@ public class Book implements Serializable {                        // Changed th
 	}
 
 	
-	public void Repair() {
+	public void Repair() {							// changed method name  Repair() to repair()
 		if (state.equals(STATE.DAMAGED)) {
 			state = STATE.AVAILABLE;
 		}
