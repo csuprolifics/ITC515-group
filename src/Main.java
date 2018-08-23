@@ -4,34 +4,34 @@ import java.util.Scanner;
 
 public class Main {
 	
-	private static Scanner IN;
-	private static library LIB;
-	private static String MENU;
-	private static Calendar CAL;
-	private static SimpleDateFormat SDF;
+	private static Scanner in;				// variable name changed from IN to in @anjli reviewer @suresh
+	private static library lib;				// variable name changed from LIB to lib @anjli reviewer @suresh
+	private static String menu;				// variable name changed from MENU to menu @anjli reviewer @suresh
+	private static Calendar cal;				// variable name changed from CAL to cal @anjli reviewer @suresh
+	private static SimpleDateFormat sdf;			// variable name changed from SDF to sdf @anjli reviewer @suresh
 	
 	
-	private static String Get_menu() {
+	private static string get_menu() { 			//return type and method name changed according to guide lines author @anjli reviewer @suresh
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("\nLibrary Main Menu\n\n")
-		  .append("  M  : add member\n")
-		  .append("  LM : list members\n")
-		  .append("\n")
-		  .append("  B  : add book\n")
-		  .append("  LB : list books\n")
-		  .append("  FB : fix books\n")
-		  .append("\n")
-		  .append("  L  : take out a loan\n")
-		  .append("  R  : return a loan\n")
-		  .append("  LL : list loans\n")
-		  .append("\n")
-		  .append("  P  : pay fine\n")
-		  .append("\n")
-		  .append("  T  : increment date\n")
-		  .append("  Q  : quit\n")
-		  .append("\n")
-		  .append("Choice : ");
+		sb.append("\nLibrary Main Menu\n\n");
+		sb.append("  Mem  : add member\n");       //object added and ; included author @anjli reviewer @suresh
+		sb.append("  LM : list members\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");			//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Bk  : add book\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  LB : list books\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  FB : fix books\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");			//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Loan  : take out a loan\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Rloan  : return a loan\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  LLoan : list loans\n");		//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");				//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Payfine  : pay fine\n");		//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");				//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Incdate  : increment date\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Quit  : quit\n");			//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");				//object added and ; included author @anjli reviewer @suresh
+		sb.append("Choice : ");				//object added author @anjli reviewer @suresh
 		  
 		return sb.toString();
 	}
