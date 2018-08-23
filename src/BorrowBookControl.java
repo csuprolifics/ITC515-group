@@ -12,18 +12,18 @@ public class BorrowBookControl {
 	
 	private List<book> PENDING;
 	private List<loan> COMPLETED;
-	private book bk;							// Changed Variable Name B to bk
+	private book bk;							// Changed Variable Name B to bk @suresh Review by @ gourav
 	
 	
-	public borrowbookcontrol() {						// Changed Method name BorrowBookControl to borrowbookcontrol
-		this.lib = lib.INSTANCE();					// Changed this.L = L.INSTANCE() to this.lib = lib.INSTANCE()
+	public borrowbookcontrol() {						// Changed Method name BorrowBookControl to borrowbookcontrol @suresh Review by @ gourav
+		this.lib = lib.INSTANCE();					// Changed this.L = L.INSTANCE() to this.lib = lib.INSTANCE() @suresh Review by @ gourav
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
 
 	public void setUI(BorrowBookUI ui) {
 		if (!state.equals(CONTROL_STATE.INITIALISED))
-			{							//Braces included
+			{							//Braces included @suresh Review by @ gourav
 			throw new RuntimeException("BorrowBookControl: cannot call setUI except in INITIALISED state");
 			}
 		this.ui = ui;
@@ -32,18 +32,18 @@ public class BorrowBookControl {
 	}
 
 		
-	public void swiped(int memberId) {					//Changed  Method name Swiped to swiped
+	public void swiped(int memberId) {					//Changed  Method name Swiped to swiped @suresh Review by @ gourav
 		if (!state.equals(CONTROL_STATE.READY))
-			{ 							//Braces included
+			{ 							//Braces included @suresh Review by @ gourav
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			}
 
-		mem = lib.getMember(memberId); 					// Changed M = L.getMember(memberId) to mem = lib.getMember(memberId)
-		if (mem == null) { 						// Changed M to mem
+		mem = lib.getMember(memberId); 					// Changed M = L.getMember(memberId) to mem = lib.getMember(memberId) @suresh Review by @ gourav
+		if (mem == null) { 						// Changed M to mem @suresh Review by @ gourav
 			ui.display("Invalid memberId");
 			return;
 		}
-		if (lib.memberCanBorrow(mem)) { 					// changed L.memberCanBorrow(M) to lib.memberCanBorrow(mem)
+		if (lib.memberCanBorrow(mem)) { 					// changed L.memberCanBorrow(M) to lib.memberCanBorrow(mem) @suresh Review by @ gourav
 			PENDING = new ArrayList<>();
 			ui.setState(BorrowBookUI.UI_STATE.SCANNING);
 			state = CONTROL_STATE.SCANNING; }
@@ -53,17 +53,17 @@ public class BorrowBookControl {
 			ui.setState(BorrowBookUI.UI_STATE.RESTRICTED); }
 	
 	
-	public void scanned(int bookId) { 						// changed method name Scanned to scanned
+	public void scanned(int bookId) { 						// changed method name Scanned to scanned @suresh Review by @ gourav
 		bk = null;
 		if (!state.equals(CONTROL_STATE.SCANNING)) {
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 		}	
-		bk = lib.Book(bookId);							// changed B = L.Book(bookId) to bk = lib.Book(bookId);
-		if (bk == null) {							// changed if (B == null) to if (bk == null) 
+		bk = lib.Book(bookId);							// changed B = L.Book(bookId) to bk = lib.Book(bookId); @suresh Review by @ gourav
+		if (bk == null) {							// changed if (B == null) to if (bk == null) @suresh Review by @ gourav
 			ui.display("Invalid bookId");
 			return;
 		}
-		if (!bk.Available()) {							// changed B.Available() to bk.Available()
+		if (!bk.Available()) {							// changed B.Available() to bk.Available() @suresh Review by @ gourav
 			ui.display("Book cannot be borrowed");
 			return;
 		}
@@ -73,12 +73,12 @@ public class BorrowBookControl {
 		}
 		if (lib.loansRemainingForMember(mem) - PENDING.size() == 0) {
 			ui.display("Loan limit reached");
-			complete();							//changed method name Complete to complete
+			complete();							//changed method name Complete to complete @suresh Review by @ gourav
 		}
 	}
 	
 	
-	public void complete() {							//changed method name Complete to complete
+	public void complete() {							//changed method name Complete to complete @suresh Review by @ gourav
 		if (PENDING.size() == 0) {
 			cancel();
 		}
