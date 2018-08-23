@@ -10,7 +10,7 @@ public class BorrowBookUI {
 	private UI_STATE state;
 
 	
-	public borrowBookUI(BorrowBookControl control) {		//changed method name BorrowBookUI to borrowBookUI
+	public borrowBookUI(BorrowBookControl control) {		//changed method name BorrowBookUI to borrowBookUI @suresh Review by @ gourav
 		this.control = control;
 		input = new Scanner(System.in);
 		state = UI_STATE.INITIALISED;
@@ -18,8 +18,8 @@ public class BorrowBookUI {
 	}
 
 	
-	private string input(string prompt) {				// changed String input(String prompt) to string input(string prompt) 
-		System.out.print(prompt);				// changed System.out.print(prompt) to System.out.println(prompt)
+	private string input(string prompt) {				// changed String input(String prompt) to string input(string prompt) @suresh Review by @ gourav
+		System.out.print(prompt);				// changed System.out.print(prompt) to System.out.println(prompt) @suresh Review by @ gourav
 		return input.nextLine();
 	}	
 		
@@ -41,12 +41,12 @@ public class BorrowBookUI {
 			
 			switch (state) {			
 			
-			case 'CANCELLED':					//CANCELLED placed in single quotes and break included
+			case 'CANCELLED':					//CANCELLED placed in single quotes and break included @suresh Review by @ gourav
 				output("Borrowing Cancelled");
 				return;
 				break;
 				
-			case 'READY':						//READY placed in single quotes
+			case 'READY':						//READY placed in single quotes @suresh Review by @ gourav
 				String memStr = input("Swipe member card (press <enter> to cancel): ");
 				if (memStr.length() == 0) {
 					control.cancel();
@@ -62,13 +62,13 @@ public class BorrowBookUI {
 				break;
 
 				
-			case 'RESTRICTED':					//RESTRICTED Placed in single quotes
+			case 'RESTRICTED':					//RESTRICTED Placed in single quotes @suresh Review by @ gourav
 				input("Press <any key> to cancel");
 				control.cancel();
 				break;
 			
 				
-			case 'SCANNING':					//SCANNING placed in single quotes
+			case 'SCANNING':					//SCANNING placed in single quotes @suresh Review by @ gourav
 				String bookStr = input("Scan Book (<enter> completes): ");
 				if (bookStr.length() == 0) {
 					control.Complete();
@@ -84,7 +84,7 @@ public class BorrowBookUI {
 				break;
 					
 				
-			case 'FINALISING': 				// FINALISING placed in single quotes
+			case 'FINALISING': 				// FINALISING placed in single quotes @suresh Review by @ gourav
 				String ans = input("Commit loans? (Y/N): ");
 				if (ans.toUpperCase().equals("N")) {
 					control.cancel();
@@ -96,7 +96,7 @@ public class BorrowBookUI {
 				break;
 				
 				
-			case 'COMPLETED':				//COMPLETED placed in single quotes and break included
+			case 'COMPLETED':				//COMPLETED placed in single quotes and break included @suresh Review by @ gourav
 				output("Borrowing Completed");
 				return;
 				break;
