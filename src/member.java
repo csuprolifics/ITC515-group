@@ -30,13 +30,13 @@ public class Member implements Serializable {					//class name changed member to
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Member:  ").append(ID).append("\n")
-		  .append("  Name:  ").append(LN).append(", ").append(FN).append("\n")
-		  .append("  Email: ").append(EM).append("\n")
-		  .append("  Phone: ").append(PN)
-		  .append("\n")
-		  .append(String.format("  Fines Owed :  $%.2f", FINES))
-		  .append("\n");
+		sb.append("Member:  ").append(iD).append("\n");				//; included and changed ID to iD
+		sb.append("  Name:  ").append(lname).append(", ").append(FN).append("\n");  //object and ; included and changed LN to lname
+		sb.append("  Email: ").append(emailid).append("\n");				//object and ; included and changed EM to emailid
+		sb.append("  Phone: ").append(pno);					//object and ; included and changed PN to pno
+		sb.append("\n");							//object and ; included
+		sb.append(String.format("  Fines Owed :  $%.2f", fines));		//object and ; included and changed FINES to fines
+		sb.append("\n");							//object and ; included
 		
 		for (loan loan : LNS.values()) {
 			sb.append(loan).append("\n");
@@ -46,7 +46,7 @@ public class Member implements Serializable {					//class name changed member to
 
 	
 	public int getId() {
-		return ID;
+		return iD;						//changed ID to iD
 	}
 
 	
@@ -61,7 +61,7 @@ public class Member implements Serializable {					//class name changed member to
 
 	
 	public double getFinesOwed() {
-		return FINES;
+		return fines;						// Changed FINES to fines
 	}
 
 	
@@ -76,17 +76,17 @@ public class Member implements Serializable {					//class name changed member to
 
 	
 	public String getLastName() {
-		return LN;
+		return lname;						//Changed LN to lname
 	}
 
 	
 	public String getFirstName() {
-		return FN;
+		return fname;    					//Changed FN to fname
 	}
 
 
 	public void addFine(double fine) {
-		FINES += fine;
+		fines += fine;
 	}
 	
 	public double payFine(double amount) {
@@ -94,12 +94,12 @@ public class Member implements Serializable {					//class name changed member to
 			throw new RuntimeException("Member.payFine: amount must be positive");
 		}
 		double change = 0;
-		if (amount > FINES) {
-			change = amount - FINES;
-			FINES = 0;
+		if (amount > fines) {
+			change = amount - fines;
+			fines = 0;
 		}
 		else {
-			FINES -= amount;
+			fines -= amount;
 		}
 		return change;
 	}
