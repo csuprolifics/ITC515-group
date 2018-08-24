@@ -3,22 +3,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("serial")
-public class loan implements Serializable {
+public class Loan implements Serializable {     				//changed class name loan to Loan author @anljli reviewer @suresh
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
-	private int ID;
-	private book B;
-	private member M; //M was changed to libraryMember
-	private Date D;
+	private int id;								//Changed ID to id						
+	private book bk;							//changed B to bk
+	private member mem; 							//changed M to mem
+	private Date date;							//changed D to date
 	private LOAN_STATE state;
 
 	
 	public loan(int loanId, book book, member member, Date dueDate) {
-		this.ID = loanId;
-		this.B = book;
-		this.M = member;
-		this.D = dueDate;
+		this.id = loanId;						//Changed ID to id
+		this.bk = book;							//Changed B to bk
+		this.mem = member;						//Changed M to mem
+		this.date = dueDate;						//Changed D to date
 		this.state = LOAN_STATE.CURRENT;
 	}
 
@@ -50,28 +50,28 @@ public class loan implements Serializable {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		StringBuilder sb = new StringBuilder();
-		sb.append("Loan:  ").append(ID).append("\n")
-		  .append("  Borrower ").append(M.getId()).append(" : ")
-		  .append(M.getLastName()).append(", ").append(M.getFirstName()).append("\n")
-		  .append("  Book ").append(B.ID()).append(" : " )
-		  .append(B.Title()).append("\n")
-		  .append("  DueDate: ").append(sdf.format(D)).append("\n")
-		  .append("  State: ").append(state);		
+		sb.append("Loan:  ").append(ID).append("\n");						//; included
+		sb.append("  Borrower ").append(M.getId()).append(" : ");				//object added and ; included
+		sb.append(M.getLastName()).append(", ").append(M.getFirstName()).append("\n");		//object added and ; included
+		sb.append("  Book ").append(B.ID()).append(" : " ); 					//object added and ; included
+		sb.append(B.Title()).append("\n");							//object added and ; included
+		sb.append("  DueDate: ").append(sdf.format(D)).append("\n");				//object added and ; included
+		sb.append("  State: ").append(state);							//object added and ; included
 		return sb.toString();
 	}
 
 
-	public member Member() {
-		return M;
+	public member member() {									//Changed Member() to member()
+		return mem;										//changed M to mem
 	}
 
 
-	public book Book() {
-		return B;
+	public book book() {										//Changed Book() to book()
+		return bk;										//changed B tobk
 	}
 
 
-	public void Loan() {
+	public void loan() {										//Changed Loan() to loan()
 		state = LOAN_STATE.DISCHARGED;		
 	}
 
