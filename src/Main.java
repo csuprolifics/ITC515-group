@@ -32,6 +32,7 @@ public class Main {
 		sb.append("  Quit  : quit\n");			//object added and ; included author @anjli reviewer @suresh
 		sb.append("\n");				//object added and ; included author @anjli reviewer @suresh
 		sb.append("Choice : ");				//object added author @anjli reviewer @suresh
+
 		  
 		return sb.toString();
 	}
@@ -39,71 +40,71 @@ public class Main {
 
 	public static void main(String[] args) {		
 		try {			
-			IN = new Scanner(System.in);
-			LIB = library.INSTANCE();
-			CAL = Calendar.getInstance();
-			SDF = new SimpleDateFormat("dd/MM/yyyy");
+			in = new Scanner(System.in);				//changed IN to in author @anjli reviewer @suresh
+			lib = library.INSTANCE();				//changed LIb to lib author @anjli reviewer @suresh
+			cal = Calendar.getInstance();				//Changed CAL to cal author @anjli reviewer @suresh
+			sdf = new SimpleDateFormat("dd/MM/yyyy");		//changed SDF to sdf author @anjli reviewer @suresh
 	
-			for (member m : LIB.Members()) {
-				output(m);
+			for (member mem : lib.Members()) {			// changed m to mem author @anjli reviewer @suresh
+				output(mem);
 			}
 			output(" ");
-			for (book b : LIB.Books()) {
-				output(b);
+			for (book bk : lib.Books()) {				//changed b to bk author @anjli reviewer @suresh
+				output(bk);
 			}
 						
-			MENU = Get_menu();
+			menu = get_menu();					//changed MENU to menu author @anjli reviewer @suresh
 			
 			boolean e = false;
 			
 			while (!e) {
 				
-				output("\n" + SDF.format(CAL.Date()));
+				output("\n" + sdf.format(CAL.Date()));
 				String c = input(MENU);
 				
 				switch (c.toUpperCase()) {
 				
-				case "M": 
+				case "mem": 					//changed M to mem author @anjli reviewer @suresh
 					addMember();
 					break;
 					
-				case "LM": 
+				case "lmem": 					//changed LM to lmem author @anjli reviewer @suresh
 					listMembers();
 					break;
 					
-				case "B": 
+				case "bk": 					//Changed B to bk author @anjli reviewer @suresh 
 					addBook();
 					break;
 					
-				case "LB": 
+				case "lb":					//changed LB to lb author @anjli reviewer @suresh
 					listBooks();
 					break;
 					
-				case "FB": 
+				case "fb":					//changed FB to fb author @anjli reviewer @suresh
 					fixBooks();
 					break;
 					
-				case "L": 
+				case "loan":					//Changed L to ln author @anjli reviewer @suresh
 					borrowBook();
 					break;
 					
-				case "R": 
+				case "rloan":					//Changed R to rln author @anjli reviewer @suresh
 					returnBook();
 					break;
 					
-				case "LL": 
+				case "lloan":					//changed LL to lln author @anjli reviewer @suresh
 					listCurrentLoans();
 					break;
 					
-				case "P": 
+				case "payfine":					//Changed P to pfine author @anjli reviewer @suresh
 					payFine();
 					break;
 					
-				case "T": 
+				case "incdate":					//Changed T to incdate author @anjli reviewer @suresh
 					incrementDate();
 					break;
 					
-				case "Q": 
+				case "Quit":					//changed Q to qt author @anjli reviewer @suresh
 					e = true;
 					break;
 					
@@ -120,14 +121,15 @@ public class Main {
 		output("\nEnded\n");
 	}	
 
-		private static void payFine() {
+	
+	private static void payFine() {
 		new PayFineUI(new PayFineControl()).run();		
 	}
 
 
 	private static void listCurrentLoans() {
 		output("");
-		for (loan loan : LIB.CurrentLoans()) {
+		for (loan loan : lib.CurrentLoans()) {				//Changed LIB to lib author @anjli reviewer @suresh
 			output(loan + "\n");
 		}		
 	}
@@ -136,7 +138,7 @@ public class Main {
 
 	private static void listBooks() {
 		output("");
-		for (book book : LIB.Books()) {
+		for (book book : lib.Books()) {
 			output(book + "\n");
 		}		
 	}
@@ -145,7 +147,7 @@ public class Main {
 
 	private static void listMembers() {
 		output("");
-		for (member member : LIB.Members()) {
+		for (member member : lib.Members()) {
 			output(member + "\n");
 		}		
 	}
@@ -170,9 +172,9 @@ public class Main {
 	private static void incrementDate() {
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
-			CAL.incrementDate(days);
-			LIB.checkCurrentLoans();
-			output(SDF.format(CAL.Date()));
+			cal.incrementDate(days);						//Changed CAL to cal author @anjli reviewer @suresh
+			lib.checkCurrentLoans();						//Changed LIB to lib author @anjli reviewer @suresh
+			output(sdf.format(cal.Date()));						//changed SDF to sdf and CAL to cal author @anjli reviewer @suresh
 			
 		} catch (NumberFormatException e) {
 			 output("\nInvalid number of days\n");
@@ -185,7 +187,7 @@ public class Main {
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");
 		String callNo = input("Enter call number: ");
-		book book = LIB.Add_book(author, title, callNo);
+		book book = lib.Add_book(author, title, callNo);
 		output("\n" + book + "\n");
 		
 	}
@@ -197,7 +199,7 @@ public class Main {
 			String firstName  = input("Enter first name: ");
 			String email = input("Enter email: ");
 			int phoneNo = Integer.valueOf(input("Enter phone number: ")).intValue();
-			member member = LIB.Add_mem(lastName, firstName, email, phoneNo);
+			member member = lib.Add_mem(lastName, firstName, email, phoneNo);
 			output("\n" + member + "\n");
 			
 		} catch (NumberFormatException e) {
@@ -209,7 +211,7 @@ public class Main {
 
 	private static String input(String prompt) {
 		System.out.print(prompt);
-		return IN.nextLine();
+		return in.nextLine();
 	}
 	
 	
