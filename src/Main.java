@@ -4,34 +4,35 @@ import java.util.Scanner;
 
 public class Main {
 	
-	private static Scanner in;						//Changed variable name IN to in author @anjli reviewer @suresh
-	private static library lib;						//Changed variable name LIB to lib @anjli reviewer @suresh
-	private static String menu;						//Changed variable name MENU to menu @anjli reviewer @suresh
-	private static Calendar cal;						//Changed variable name CAL to cal @anjli reviewer @suresh
-	private static SimpleDateFormat sdf;					// Changed variable name SDF to sdf @anjli reviewer @suresh
+	private static Scanner in;				// variable name changed from IN to in @anjli reviewer @suresh
+	private static library lib;				// variable name changed from LIB to lib @anjli reviewer @suresh
+	private static String menu;				// variable name changed from MENU to menu @anjli reviewer @suresh
+	private static Calendar cal;				// variable name changed from CAL to cal @anjli reviewer @suresh
+	private static SimpleDateFormat sdf;			// variable name changed from SDF to sdf @anjli reviewer @suresh
 	
 	
-	private static string get_menu() { 					// method name changed String Get_menu() to string get_menu() @anjli reviewer @suresh
+	private static string get_menu() { 			//return type and method name changed according to guide lines author @anjli reviewer @suresh
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("\nLibrary Main Menu\n\n");
-		sb.append("  Mem  : add member\n");				//changed .append("  M  : add member\n") to sb.append("  Mem  : add member\n"); @anjli reviewer @suresh
-		sb.append("  LMem : list members\n");				//changed .append("  LM : list members\n") to sb.append("  LMem : list members\n"); @anjli reviewer @suresh
-		sb.append("\n");
-		sb.append("  Bk  : add book\n");				//changed .append("  B  : add book\n") to sb.append("  Bk  : add book\n"); @anjli reviewer @suresh
-		sb.append("  LB : list books\n");				//changed .append("  LB : list books\n") to sb.append("  LB : list books\n"); @anjli reviewer @suresh
-		sb.append("  FB : fix books\n");				//changed .append("  FB : fix books\n") to sb.append("  FB : fix books\n"); @anjli reviewer @suresh
-		sb.append("\n");
-		sb.append("  Ln  : take out a loan\n");				//changed .append("  L  : take out a loan\n") to sb.append("  Ln  : take out a loan @anjli reviewer @suresh\n");
-		sb.append("  Rln  : return a loan\n");				//changed .append("  R  : return a loan\n") to sb.append("  Rln  : return a loan\n"); @anjli reviewer @suresh
-		sb.append("  LLn : list loans\n");				//changed .append("  LLn : list loans\n") to sb.append("  LLn : list loans\n"); @anjli reviewer @suresh
-		sb.append("\n");
-		sb.append("  Pfine  : pay fine\n");				//changed .append("  P  : pay fine\n") to sb.append("  Pfine  : pay fine\n"); @anjli reviewer @suresh
-		sb.append("\n");
-		sb.append("  Incdate  : increment date\n");			//changed .append("  T  : increment date\n") to sb.append("  Incdate  : increment date @anjli reviewer @suresh\n");
-		sb.append("  Qt  : quit\n");					//changed .append("  Q  : quit\n") to sb.append("  Qt  : quit\n"); @anjli reviewer @suresh
-		sb.append("\n");
-		sb.append("Choice : ");						//changed .append("Choice : ");to sb.append("Choice : "); @anjli reviewer @suresh
+		sb.append("  Mem  : add member\n");       //object added and ; included author @anjli reviewer @suresh
+		sb.append("  LM : list members\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");			//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Bk  : add book\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  LB : list books\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  FB : fix books\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");			//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Loan  : take out a loan\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Rloan  : return a loan\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  LLoan : list loans\n");		//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");				//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Payfine  : pay fine\n");		//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");				//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Incdate  : increment date\n");	//object added and ; included author @anjli reviewer @suresh
+		sb.append("  Quit  : quit\n");			//object added and ; included author @anjli reviewer @suresh
+		sb.append("\n");				//object added and ; included author @anjli reviewer @suresh
+		sb.append("Choice : ");				//object added author @anjli reviewer @suresh
+
 		  
 		return sb.toString();
 	}
@@ -83,19 +84,19 @@ public class Main {
 					fixBooks();
 					break;
 					
-				case "ln":					//Changed L to ln author @anjli reviewer @suresh
+				case "loan":					//Changed L to ln author @anjli reviewer @suresh
 					borrowBook();
 					break;
 					
-				case "rln":					//Changed R to rln author @anjli reviewer @suresh
+				case "rloan":					//Changed R to rln author @anjli reviewer @suresh
 					returnBook();
 					break;
 					
-				case "lln":					//changed LL to lln author @anjli reviewer @suresh
+				case "lloan":					//changed LL to lln author @anjli reviewer @suresh
 					listCurrentLoans();
 					break;
 					
-				case "pfine":					//Changed P to pfine author @anjli reviewer @suresh
+				case "payfine":					//Changed P to pfine author @anjli reviewer @suresh
 					payFine();
 					break;
 					
@@ -103,7 +104,7 @@ public class Main {
 					incrementDate();
 					break;
 					
-				case "Qt":					//changed Q to qt author @anjli reviewer @suresh
+				case "Quit":					//changed Q to qt author @anjli reviewer @suresh
 					e = true;
 					break;
 					
@@ -120,7 +121,8 @@ public class Main {
 		output("\nEnded\n");
 	}	
 
-		private static void payFine() {
+	
+	private static void payFine() {
 		new PayFineUI(new PayFineControl()).run();		
 	}
 
