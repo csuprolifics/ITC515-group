@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("serial")
-public class library implements Serializable {
+public class Library implements Serializable {						//class name changed library to Library author @gourav reviewer @samatha
 	
-	private static final String LIBRARY_FILE = "library.obj";
+	private static final String library_file = "library.obj";			//variable name changed LIBRARY_FILE to library_file 
 	private static final int LOAN_LIMIT = 2;
 	private static final int LOAN_PERIOD = 2;
 	private static final double FINE_PER_DAY = 1.0;
