@@ -4,34 +4,34 @@ import java.util.Scanner;
 
 public class Main {
 	
-	private static Scanner IN;
-	private static library LIB;
-	private static String MENU;
-	private static Calendar CAL;
-	private static SimpleDateFormat SDF;
+	private static Scanner in;						//Changed variable name IN to in
+	private static library lib;						//Changed variable name LIB to lib
+	private static String menu;						//Changed variable name MENU to menu
+	private static Calendar cal;						//Changed variable name CAL to cal
+	private static SimpleDateFormat sdf;					// Changed variable name SDF to sdf
 	
 	
-	private static String Get_menu() {
+	private static string get_menu() { 					// method name changed String Get_menu() to string get_menu()
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("\nLibrary Main Menu\n\n")
-		  .append("  M  : add member\n")
-		  .append("  LM : list members\n")
-		  .append("\n")
-		  .append("  B  : add book\n")
-		  .append("  LB : list books\n")
-		  .append("  FB : fix books\n")
-		  .append("\n")
-		  .append("  L  : take out a loan\n")
-		  .append("  R  : return a loan\n")
-		  .append("  LL : list loans\n")
-		  .append("\n")
-		  .append("  P  : pay fine\n")
-		  .append("\n")
-		  .append("  T  : increment date\n")
-		  .append("  Q  : quit\n")
-		  .append("\n")
-		  .append("Choice : ");
+		sb.append("\nLibrary Main Menu\n\n");
+		sb.append("  Mem  : add member\n");				//changed .append("  M  : add member\n") to sb.append("  Mem  : add member\n");
+		sb.append("  LMem : list members\n");				//changed .append("  LM : list members\n") to sb.append("  LMem : list members\n");
+		sb.append("\n");
+		sb.append("  Bk  : add book\n");				//changed .append("  B  : add book\n") to sb.append("  Bk  : add book\n");
+		sb.append("  LB : list books\n");				//changed .append("  LB : list books\n") to sb.append("  LB : list books\n");
+		sb.append("  FB : fix books\n");				//changed .append("  FB : fix books\n") to sb.append("  FB : fix books\n");
+		sb.append("\n");
+		sb.append("  Ln  : take out a loan\n");				//changed .append("  L  : take out a loan\n") to sb.append("  Ln  : take out a loan\n");
+		sb.append("  Rln  : return a loan\n");				//changed .append("  R  : return a loan\n") to sb.append("  Rln  : return a loan\n");
+		sb.append("  LLn : list loans\n");				//changed .append("  LLn : list loans\n") to sb.append("  LLn : list loans\n");
+		sb.append("\n");
+		sb.append("  Pfine  : pay fine\n");				//changed .append("  P  : pay fine\n") to sb.append("  Pfine  : pay fine\n");
+		sb.append("\n");
+		sb.append("  Incdate  : increment date\n");			//changed .append("  T  : increment date\n") to sb.append("  Incdate  : increment date\n");
+		sb.append("  Qt  : quit\n");					//changed .append("  Q  : quit\n") to sb.append("  Qt  : quit\n");
+		sb.append("\n");
+		sb.append("Choice : ");						//changed .append("Choice : ");to sb.append("Choice : ");
 		  
 		return sb.toString();
 	}
