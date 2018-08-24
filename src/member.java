@@ -5,24 +5,24 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("serial")
-public class member implements Serializable {
+public class Member implements Serializable {					//class name changed member to Member
 
-	private String LN;
-	private String FN;
-	private String EM;
-	private int PN;
-	private int ID;
-	private double FINES;
+	private String lname;							//Variable name changed LN to lname
+	private String fname;							//Variable name changed FN to fname
+	private String emailid;							//Variable name changed EM to emailid
+	private int pno;							//Variable name changed PN to pno
+	private int iD;								//variable name changed ID to iD
+	private double fines;							//Variable name Changed FINES to fines
 	
 	private Map<Integer, loan> LNS;
 
 	
 	public member(String lastName, String firstName, String email, int phoneNo, int id) {
-		this.LN = lastName;
-		this.FN = firstName;
-		this.EM = email;
-		this.PN = phoneNo;
-		this.ID = id;
+		this.lname = lastName;						//Changed this.LN to this.lname
+		this.fname = firstName;						//changed this.FN to this.fname
+		this.emailid = email;						//Changed this.EM to this.emailid
+		this.pno = phoneNo;						//Changed this.PN to this.pno 
+		this.iD = id;							//Changed this.ID to this.iD
 		
 		this.LNS = new HashMap<>();
 	}
