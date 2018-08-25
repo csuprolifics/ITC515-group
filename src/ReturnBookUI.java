@@ -6,12 +6,12 @@ public class ReturnBookUI
 
 	public static enum UI_STATE { INITIALISED, READY, INSPECTING, COMPLETED };
 
-	private ReturnBookControl returnBookControl;   //changed name
+	private ReturnBookControl returnBookControl;   //changed name to returnBookControl author@jashwanth reviewer@anjali
 	private Scanner input;
 	private UI_STATE state;
 
 	
-	public returnBookUI(ReturnBookControl control)          //changed method name author@jashwanth reviewer@anjali
+	public returnBookUI(ReturnBookControl control)     //changed methodname author@jashwanth reviewer@anjali 
            {
 		this.control = control;
 		input = new Scanner(System.in);
@@ -31,9 +31,9 @@ public class ReturnBookUI
 				break;
 				
 			case READY:
-				String readBook = input("Scan Book (<enter> completes): ");          //changed bookStr to readBook
+				String readBook = input("Scan Book (<enter> completes): ");          //changed bookStr to readBook author@jashwanth reviewer@anjali 
 				if (readBook.length() == 0) {
-					control.scanningComplete();   //changed bookStr to readBook
+					control.scanningComplete();   //changed bookStr to readBook author@jashwanth reviewer@anjali 
 				}
 				else {
 					try {
@@ -47,7 +47,7 @@ public class ReturnBookUI
 				break;				
 				
 			case INSPECTING:
-				String answer = input("Is book damaged? (Y/N): ");   //changed string variable Ans to answer
+				String answer = input("Is book damaged? (Y/N): ");  //changed string variable Ans to answer author@jashwanth reviewer@anjali  
 				boolean isDamaged = false;
 				if (ans.toUpperCase().equals("Y")) {					
 					isDamaged = true;
