@@ -10,7 +10,8 @@ public class ReturnBookUI {
 	private UI_STATE state;
 
 	
-	public ReturnBookUI(ReturnBookControl control) {
+	public returnBookUI(ReturnBookControl control)
+           {//changed method name author@jashwanth reviewer@anjali
 		this.control = control;
 		input = new Scanner(System.in);
 		state = UI_STATE.INITIALISED;
