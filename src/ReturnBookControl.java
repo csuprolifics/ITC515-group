@@ -8,7 +8,9 @@ public class ReturnBookControl {
 	private loan currentLoan;
 	
 
-	public ReturnBookControl() {
+	public returnBookControl(ReturnBookControl control) //changed the method name author@jashwanth reviewer@anjali
+
+{
 		this.library = library.INSTANCE();
 		state = CONTROL_STATE.INITIALISED;
 	}
