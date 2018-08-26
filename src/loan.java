@@ -9,7 +9,7 @@ public class Loan implements Serializable {                      //Changed the n
 	
 	private int id;                                        // Changed variable name from ID to id @samatha
 	private book B;
-	private member M;
+	private member M; //M was changed to libraryMember
 	private Date D;
 	private LOAN_STATE state;
 
