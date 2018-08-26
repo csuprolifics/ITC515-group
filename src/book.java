@@ -2,9 +2,9 @@ import java.io.Serializable;
 
 
 @SuppressWarnings("serial")
-public class book implements Serializable {
+public class Book implements Serializable {
 	
-	private String T;
+	private String title;    //changed variable From T to title @samatha @reviewed by suresh 
 	private String A;
 	private String C;
 	private int ID;

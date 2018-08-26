@@ -3,11 +3,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("serial")
-public class loan implements Serializable {
+public class Loan implements Serializable {                      //Changed the name of the class from loan to Loan @samatha and reviewd by @suresh
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
-	private int ID;
+	private int id;                                        // Changed variable name from ID to id @samatha
 	private book B;
 	private member M;
 	private Date D;

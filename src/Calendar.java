@@ -3,15 +3,15 @@ import java.util.concurrent.TimeUnit;
 
 public class Calendar {
 	
-	private static Calendar self;
+	private static calendar self;//changed method name Calender to calender by @samatha reviewed by @jashwanth
 	private static java.util.Calendar cal;
 	
 	
-	private Calendar() {
+	private calendar() { //changed Calender method name to calender by @samatha reviewed by @jashwanth
 		cal = java.util.Calendar.getInstance();
 	}
 	
-	public static Calendar getInstance() {
+	public static calendar getInstance() {  //changed Calender method name to calender by @samatha reviewed by @jashwanth
 		if (self == null) {
 			self = new Calendar();
 		}
@@ -22,7 +22,7 @@ public class Calendar {
 		cal.add(java.util.Calendar.DATE, days);		
 	}
 	
-	public synchronized void setDate(Date date) {
+	public synchronized void setDate(Date date) {  //changed  name Date date to date date by @samatha and reviewed by jashwanth
 		try {
 			cal.setTime(date);
 	        cal.set(java.util.Calendar.HOUR_OF_DAY, 0);  
@@ -34,7 +34,7 @@ public class Calendar {
 			throw new RuntimeException(e);
 		}	
 	}
-	public synchronized Date Date() {
+	public synchronized date date() { 
 		try {
 	        cal.set(java.util.Calendar.HOUR_OF_DAY, 0);  
 	        cal.set(java.util.Calendar.MINUTE, 0);  
@@ -47,7 +47,7 @@ public class Calendar {
 		}	
 	}
 
-	public synchronized Date getDueDate(int loanPeriod) {
+	public synchronized date getDueDate(int loanPeriod) { 
 		Date now = Date();
 		cal.add(java.util.Calendar.DATE, loanPeriod);
 		Date dueDate = cal.getTime();
@@ -55,7 +55,7 @@ public class Calendar {
 		return dueDate;
 	}
 	
-	public synchronized long getDaysDifference(Date targetDate) {
+	public synchronized long getDaysDifference(date targetDate) { //changed Date to date by @samatha reviewed by @jashwanth
 		long diffMillis = Date().getTime() - targetDate.getTime();
 	    long diffDays = TimeUnit.DAYS.convert(diffMillis, TimeUnit.MILLISECONDS);
 	    return diffDays;

@@ -1,4 +1,4 @@
-public class FixBookControl {
+public class FixBookControl {    
 	
 	private FixBookUI ui;
 	private enum CONTROL_STATE { INITIALISED, READY, FIXING };
@@ -8,7 +8,7 @@ public class FixBookControl {
 	private book currentBook;
 
 
-	public FixBookControl() {
+	public fixBookControl() {  //changed FixBookControl to fixBookControl by @samatha reviewed by @jashwanth
 		this.library = library.INSTANCE();
 		state = CONTROL_STATE.INITIALISED;
 	}
