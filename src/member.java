@@ -5,24 +5,24 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("serial")
-public class member implements Serializable {
+public class Member implements Serializable {					//class name changed member to Member author @anjli reviewer @suresh
 
-	private String LN;
-	private String FN;
-	private String EM;
-	private int PN;
-	private int ID;
-	private double FINES;
+	private String lname;							//Variable name changed LN to lname author @anjli reviewer @suresh
+	private String fname;							//Variable name changed FN to fname author @anjli reviewer @suresh
+	private String emailid;							//Variable name changed EM to emailid author @anjli reviewer @suresh
+	private int pno;							//Variable name changed PN to pno author @anjli reviewer @suresh
+	private int iD;								//variable name changed ID to iD author @anjli reviewer @suresh
+	private double fines;							//Variable name Changed FINES to fines author @anjli reviewer @suresh
 	
 	private Map<Integer, loan> LNS;
 
 	
 	public member(String lastName, String firstName, String email, int phoneNo, int id) {
-		this.LN = lastName;
-		this.FN = firstName;
-		this.EM = email;
-		this.PN = phoneNo;
-		this.ID = id;
+		this.lname = lastName;						//Changed this.LN to this.lname author @anjli reviewer @suresh
+		this.fname = firstName;						//changed this.FN to this.fname author @anjli reviewer @suresh
+		this.emailid = email;						//Changed this.EM to this.emailid author @anjli reviewer @suresh
+		this.pno = phoneNo;						//Changed this.PN to this.pno author @anjli reviewer @suresh
+		this.iD = id;							//Changed this.ID to this.iD author @anjli reviewer @suresh
 		
 		this.LNS = new HashMap<>();
 	}
@@ -30,13 +30,13 @@ public class member implements Serializable {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Member:  ").append(ID).append("\n")
-		  .append("  Name:  ").append(LN).append(", ").append(FN).append("\n")
-		  .append("  Email: ").append(EM).append("\n")
-		  .append("  Phone: ").append(PN)
-		  .append("\n")
-		  .append(String.format("  Fines Owed :  $%.2f", FINES))
-		  .append("\n");
+		sb.append("Member:  ").append(iD).append("\n");				//; included and changed ID to iD author @anjli reviewer @suresh
+		sb.append("  Name:  ").append(lname).append(", ").append(FN).append("\n");  //object and ; included and changed LN to lname author @anjli reviewer @suresh
+		sb.append("  Email: ").append(emailid).append("\n");				//object and ; included and changed EM to emailid author @anjli reviewer @suresh
+		sb.append("  Phone: ").append(pno);					//object and ; included and changed PN to pno author @anjli reviewer @suresh
+		sb.append("\n");							//object and ; included author @anjli reviewer @suresh
+		sb.append(String.format("  Fines Owed :  $%.2f", fines));		//object and ; included and changed FINES to fines author @anjli reviewer @suresh
+		sb.append("\n");							//object and ; included author @anjli reviewer @suresh
 		
 		for (loan loan : LNS.values()) {
 			sb.append(loan).append("\n");
@@ -46,7 +46,7 @@ public class member implements Serializable {
 
 	
 	public int getId() {
-		return ID;
+		return iD;						//changed ID to iD author @anjli reviewer @suresh
 	}
 
 	
@@ -61,7 +61,7 @@ public class member implements Serializable {
 
 	
 	public double getFinesOwed() {
-		return FINES;
+		return fines;						// Changed FINES to fines author @anjli reviewer @suresh
 	}
 
 	
@@ -76,17 +76,17 @@ public class member implements Serializable {
 
 	
 	public String getLastName() {
-		return LN;
+		return lname;						//Changed LN to lname author @anjli reviewer @suresh
 	}
 
 	
 	public String getFirstName() {
-		return FN;
+		return fname;    					//Changed FN to fname author @anjli reviewer @suresh
 	}
 
 
 	public void addFine(double fine) {
-		FINES += fine;
+		fines += fine;
 	}
 	
 	public double payFine(double amount) {
@@ -94,12 +94,12 @@ public class member implements Serializable {
 			throw new RuntimeException("Member.payFine: amount must be positive");
 		}
 		double change = 0;
-		if (amount > FINES) {
-			change = amount - FINES;
-			FINES = 0;
+		if (amount > fines) {
+			change = amount - fines;
+			fines = 0;
 		}
 		else {
-			FINES -= amount;
+			fines -= amount;
 		}
 		return change;
 	}

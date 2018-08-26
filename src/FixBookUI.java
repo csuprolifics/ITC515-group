@@ -1,16 +1,17 @@
 import java.util.Scanner;
 
 
-public class FixBookUI {
+public class fixBookUI { //changed FixBookUI to fixBookUI @samatha reviewed by @jashwanth
 
 	public static enum UI_STATE { INITIALISED, READY, FIXING, COMPLETED };
 
-	private FixBookControl control;
+	private fixBookControl control; //changed FixBookControl to fixBookControl @samatha reviewed by @jashwanth
 	private Scanner input;
 	private UI_STATE state;
 
 	
-	public FixBookUI(FixBookControl control) {
+	public fixBookUI(fixBookControl control) { //changed FixBookUIto fixBookUI @samatha reviewed by @jashwanth
+                                                   //changed FixBookControl to fixBookControl @samatha reviewed by @jashwanth
 		this.control = control;
 		input = new Scanner(System.in);
 		state = UI_STATE.INITIALISED;
@@ -28,10 +29,10 @@ public class FixBookUI {
 		
 		while (true) {
 			
-			switch (state) {
+			switch ("state") {  // added strings"" to state 2samatha reviewed by jashwanth
 			
-			case READY:
-				String bookStr = input("Scan Book (<enter> completes): ");
+			case "READY":  // added strings"" to state 2samatha reviewed by jashwanth
+				String bookStr = input("Scan Book (<enter> completes): "); 
 				if (bookStr.length() == 0) {
 					control.scanningComplete();
 				}
@@ -46,8 +47,8 @@ public class FixBookUI {
 				}
 				break;	
 				
-			case FIXING:
-				String ans = input("Fix Book? (Y/N) : ");
+			case "FIXING":
+				String ans = input("Fix Book? (Y/N) : ",ans);// added ans by @samatha reviewed by @jashwanth
 				boolean fix = false;
 				if (ans.toUpperCase().equals("Y")) {
 					fix = true;
@@ -55,7 +56,7 @@ public class FixBookUI {
 				control.fixBook(fix);
 				break;
 								
-			case COMPLETED:
+			case "COMPLETED": // added strings"" to state 2samatha reviewed by jashwanth
 				output("Fixing process complete");
 				return;
 			
@@ -69,7 +70,7 @@ public class FixBookUI {
 	}
 
 	
-	private String input(String prompt) {
+	private String input(string prompt) {// changed String to string @samatha reviewed by @jashwanth
 		System.out.print(prompt);
 		return input.nextLine();
 	}	
@@ -81,7 +82,7 @@ public class FixBookUI {
 	
 
 	public void display(Object object) {
-		output(object);
+		System.out.println(object);//added system.out.println by @samatha reviewed by jashwanth
 	}
 	
 	
