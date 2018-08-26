@@ -3,6 +3,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("serial")
+<<<<<<< HEAD
+public class Loan implements Serializable {                      //Changed the name of the class from loan to Loan @samatha and reviewd by @suresh
+	
+	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
+	
+	private int id;                                        // Changed variable name from ID to id @samatha
+	private book B;
+	private member M; //M was changed to libraryMember
+	private Date D;
+=======
 public class Loan implements Serializable {     				//changed class name loan to Loan author @anljli reviewer @suresh
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
@@ -11,6 +21,7 @@ public class Loan implements Serializable {     				//changed class name loan to
 	private book bk;							//changed B to bk author @anljli reviewer @suresh
 	private member mem; 							//changed M to mem author @anljli reviewer @suresh
 	private Date date;							//changed D to date author @anljli reviewer @suresh
+>>>>>>> master
 	private LOAN_STATE state;
 
 	
