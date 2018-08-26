@@ -4,7 +4,7 @@ public class ReturnBookControl {
 	private enum CONTROL_STATE { INITIALISED, READY, INSPECTING };
 	private CONTROL_STATE state;
 	
-	private library library;
+	private library lib; //Changed variable name library to lib author@jashwanth review@anjali
 	private loan currentLoan;
 	
 
