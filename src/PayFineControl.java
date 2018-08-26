@@ -1,6 +1,6 @@
 public class PayFineControl {
 	
-	private PayFineUI ui;
+	private payfineui ui;			//variable name changed PayFineUI to payfineui 
 	private enum CONTROL_STATE { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
 	
@@ -8,18 +8,18 @@ public class PayFineControl {
 	private member member;;
 
 
-	public PayFineControl() {
+	public payfinecontrol() {				//variable name changed PayFineControl to payfinecontrol
 		this.library = library.INSTANCE();
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
 	
-	public void setUI(PayFineUI ui) {
+	public void setUI(payfineui ui) {
 		if (!state.equals(CONTROL_STATE.INITIALISED)) {
-			throw new RuntimeException("PayFineControl: cannot call setUI except in INITIALISED state");
+			throw new RuntimeException("payfinecontrol: cannot call setUI except in INITIALISED state");
 		}	
 		this.ui = ui;
-		ui.setState(PayFineUI.UI_STATE.READY);
+		ui.setState(payfineui.UI_STATE.READY);
 		state = CONTROL_STATE.READY;		
 	}
 
