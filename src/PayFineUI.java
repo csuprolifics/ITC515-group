@@ -11,7 +11,7 @@ public class PayFineUI {
 	private UI_STATE state;
 
 	
-	public PayFineUI(PayFineControl control) {
+	public PayFineUI(payfinecontrol control) {			// variable name changed to payfinecontrol @author gourav
 		this.control = control;
 		input = new Scanner(System.in);
 		state = UI_STATE.INITIALISED;
